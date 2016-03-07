@@ -122,7 +122,7 @@ void setup() {
   digitalWrite(LED3, LOW);
   
   //Initialize CAN Controller 
-  if(Canbus.init(CANSPEED_500))  /* Initialize MCP2515 CAN controller at the specified speed */
+  if(Canbus.init(CAN_500KBPS))  /* Initialize MCP2515 CAN controller at the specified speed */
   {
     clear_lcd();
     lcd.print("CAN Init ok");

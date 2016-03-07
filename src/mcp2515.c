@@ -120,6 +120,90 @@ uint8_t mcp2515_read_status(uint8_t type)
 uint8_t mcp2515_init(uint8_t speed)
 {
 		
+	uint8_t cfg1, cfg2, cfg3;
+    switch (speed) 
+    {
+        case (CAN_5KBPS):
+        cfg1 = MCP_16MHz_5kBPS_CFG1;
+        cfg2 = MCP_16MHz_5kBPS_CFG2;
+        cfg3 = MCP_16MHz_5kBPS_CFG3;
+        break;
+
+        case (CAN_10KBPS):
+        cfg1 = MCP_16MHz_10kBPS_CFG1;
+        cfg2 = MCP_16MHz_10kBPS_CFG2;
+        cfg3 = MCP_16MHz_10kBPS_CFG3;
+        break;
+
+        case (CAN_20KBPS):
+        cfg1 = MCP_16MHz_20kBPS_CFG1;
+        cfg2 = MCP_16MHz_20kBPS_CFG2;
+        cfg3 = MCP_16MHz_20kBPS_CFG3;
+        break;
+        
+        case (CAN_31K25BPS):
+        cfg1 = MCP_16MHz_31k25BPS_CFG1;
+        cfg2 = MCP_16MHz_31k25BPS_CFG2;
+        cfg3 = MCP_16MHz_31k25BPS_CFG3;
+        break;
+
+        case (CAN_40KBPS):
+        cfg1 = MCP_16MHz_40kBPS_CFG1;
+        cfg2 = MCP_16MHz_40kBPS_CFG2;
+        cfg3 = MCP_16MHz_40kBPS_CFG3;
+        break;
+
+        case (CAN_50KBPS):
+        cfg1 = MCP_16MHz_50kBPS_CFG1;
+        cfg2 = MCP_16MHz_50kBPS_CFG2;
+        cfg3 = MCP_16MHz_50kBPS_CFG3;
+        break;
+
+        case (CAN_80KBPS):
+        cfg1 = MCP_16MHz_80kBPS_CFG1;
+        cfg2 = MCP_16MHz_80kBPS_CFG2;
+        cfg3 = MCP_16MHz_80kBPS_CFG3;
+        break;
+
+        case (CAN_100KBPS):
+        cfg1 = MCP_16MHz_100kBPS_CFG1;
+        cfg2 = MCP_16MHz_100kBPS_CFG2;
+        cfg3 = MCP_16MHz_100kBPS_CFG3;
+        break;
+
+        case (CAN_125KBPS):
+        cfg1 = MCP_16MHz_125kBPS_CFG1;
+        cfg2 = MCP_16MHz_125kBPS_CFG2;
+        cfg3 = MCP_16MHz_125kBPS_CFG3;
+        break;
+
+        case (CAN_200KBPS):
+        cfg1 = MCP_16MHz_200kBPS_CFG1;
+        cfg2 = MCP_16MHz_200kBPS_CFG2;
+        cfg3 = MCP_16MHz_200kBPS_CFG3;
+        break;
+
+        case (CAN_250KBPS):
+        cfg1 = MCP_16MHz_250kBPS_CFG1;
+        cfg2 = MCP_16MHz_250kBPS_CFG2;
+        cfg3 = MCP_16MHz_250kBPS_CFG3;
+        break;
+
+        case (CAN_500KBPS):
+        cfg1 = MCP_16MHz_500kBPS_CFG1;
+        cfg2 = MCP_16MHz_500kBPS_CFG2;
+        cfg3 = MCP_16MHz_500kBPS_CFG3;
+        break;
+        
+        case (CAN_1000KBPS):
+        cfg1 = MCP_16MHz_1000kBPS_CFG1;
+        cfg2 = MCP_16MHz_1000kBPS_CFG2;
+        cfg3 = MCP_16MHz_1000kBPS_CFG3;
+        break;  
+
+        default:
+        break;
+    }
 	
 	SET(MCP2515_CS);
 	SET_OUTPUT(MCP2515_CS);
@@ -162,11 +246,17 @@ uint8_t mcp2515_init(uint8_t speed)
 	spi_putc((1<<BTLMODE)|(1<<PHSEG11));
 	spi_putc((1<<BRP1)|(1<<BRP0));
 */	
+/*
 	spi_putc((1<<PHSEG21));		// Bitrate 250 kbps at 16 MHz
 	spi_putc((1<<BTLMODE)|(1<<PHSEG11));
 	//spi_putc(1<<BRP0);
     spi_putc(speed);
+*/
 
+	spi_putc(cfg3);
+	spi_putc(cfg2);
+	spi_putc(cfg1);
+	
 	// activate interrupts
 	spi_putc((1<<RX1IE)|(1<<RX0IE));
 	SET(MCP2515_CS);
