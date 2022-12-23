@@ -7,10 +7,7 @@
 #ifndef canbus__h
 #define canbus__h
 
-#define CANSPEED_125 	7		// CAN speed at 125 kbps
-#define CANSPEED_250  	3		// CAN speed at 250 kbps
-#define CANSPEED_500	1		// CAN speed at 500 kbps
-
+#include "speeds.h"
 
 #define ENGINE_COOLANT_TEMP 0x05
 #define ENGINE_RPM          0x0C

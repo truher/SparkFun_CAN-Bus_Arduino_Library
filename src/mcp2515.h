@@ -32,6 +32,7 @@
 #include <inttypes.h>
 
 #include "mcp2515_defs.h"
+#include "speeds.h"
 #include "global.h"
 #ifdef __cplusplus
 

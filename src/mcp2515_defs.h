@@ -276,5 +276,59 @@
 #define	DLC1		1
 #define DLC0		0
 
+ /** \brief speed 16M */
+ 
+#define MCP_16MHz_1000kBPS_CFG1 (0x00)
+#define MCP_16MHz_1000kBPS_CFG2 (0xD0)
+#define MCP_16MHz_1000kBPS_CFG3 (0x82)
+
+#define MCP_16MHz_500kBPS_CFG1 (0x00)
+#define MCP_16MHz_500kBPS_CFG2 (0xF0)
+#define MCP_16MHz_500kBPS_CFG3 (0x86)
+
+#define MCP_16MHz_250kBPS_CFG1 (0x41)
+#define MCP_16MHz_250kBPS_CFG2 (0xF1)
+#define MCP_16MHz_250kBPS_CFG3 (0x85)
+
+#define MCP_16MHz_200kBPS_CFG1 (0x01)
+#define MCP_16MHz_200kBPS_CFG2 (0xFA)
+#define MCP_16MHz_200kBPS_CFG3 (0x87)
+
+#define MCP_16MHz_125kBPS_CFG1 (0x03)
+#define MCP_16MHz_125kBPS_CFG2 (0xF0)
+#define MCP_16MHz_125kBPS_CFG3 (0x86)
+
+#define MCP_16MHz_100kBPS_CFG1 (0x03)
+#define MCP_16MHz_100kBPS_CFG2 (0xFA)
+#define MCP_16MHz_100kBPS_CFG3 (0x87)
+
+#define MCP_16MHz_80kBPS_CFG1 (0x03)
+#define MCP_16MHz_80kBPS_CFG2 (0xFF)
+#define MCP_16MHz_80kBPS_CFG3 (0x87)
+
+#define MCP_16MHz_50kBPS_CFG1 (0x07)
+#define MCP_16MHz_50kBPS_CFG2 (0xFA)
+#define MCP_16MHz_50kBPS_CFG3 (0x87)
+
+#define MCP_16MHz_40kBPS_CFG1 (0x07)
+#define MCP_16MHz_40kBPS_CFG2 (0xFF)
+#define MCP_16MHz_40kBPS_CFG3 (0x87)
+
+#define MCP_16MHz_31k25BPS_CFG1 (0x0F)
+#define MCP_16MHz_31k25BPS_CFG2 (0xF1)
+#define MCP_16MHz_31k25BPS_CFG3 (0x85)
+
+#define MCP_16MHz_20kBPS_CFG1 (0x0F)
+#define MCP_16MHz_20kBPS_CFG2 (0xFF)
+#define MCP_16MHz_20kBPS_CFG3 (0x87)
+
+#define MCP_16MHz_10kBPS_CFG1 (0x1F)
+#define MCP_16MHz_10kBPS_CFG2 (0xFF)
+#define MCP_16MHz_10kBPS_CFG3 (0x87)
+
+#define MCP_16MHz_5kBPS_CFG1 (0x3F)
+#define MCP_16MHz_5kBPS_CFG2 (0xFF)
+#define MCP_16MHz_5kBPS_CFG3 (0x87)
+
 /*@}*/
 #endif	// MCP2515_DEFS_H

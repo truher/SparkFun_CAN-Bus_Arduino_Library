@@ -38,7 +38,7 @@ void setup(){
 Serial.begin(9600);
 Serial.println("CAN-Bus Demo");
 
-if(Canbus.init(CANSPEED_500))  /* Initialise MCP2515 CAN controller at the specified speed */
+if(Canbus.init(CAN_500KBPS))  /* Initialise MCP2515 CAN controller at the specified speed */
   {
     Serial.println("CAN Init ok");
   } else
